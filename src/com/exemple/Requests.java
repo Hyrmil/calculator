@@ -4,9 +4,6 @@ import java.util.Scanner;
 
 public class Requests {
     
-    static final String NAN = "This is not a number, try again";
-    static final String NO_SYMBOL = "This is not a valid symbol, try again";
-
     Boolean topDigit = false;
     Boolean topSymbol = false;
     Control ctrl = new Control();
@@ -22,7 +19,7 @@ public class Requests {
         topSymbol = ctrl.isSymbol(symbol);
 
         while (Boolean.TRUE.equals(!topSymbol)) {
-            System.out.println(NO_SYMBOL);
+            System.out.println( "\"" + symbol + "\" is not a valid symbol, try again");
             symbol = sc.nextLine();
             topSymbol = ctrl.isSymbol(symbol);
 
@@ -40,7 +37,7 @@ public class Requests {
         topDigit = ctrl.isDigit(numberToString);
 
         while (Boolean.TRUE.equals(!topDigit)) {
-            System.out.println(NAN);
+            System.out.println("\"" + numberToString + "\" is not a number, try again");
             numberToString = sc.nextLine();
             topDigit = ctrl.isDigit(numberToString);
             if (Boolean.TRUE.equals(topDigit)) {
